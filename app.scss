@@ -1,0 +1,88 @@
+// Gets Material assets
+@use '@material/button/mdc-button';
+@use '@material/button';
+@use "@material/ripple";
+
+// Imports Poppins and Roboto from Google Fonts
+@import url('https://fonts.googleapis.com/css2?family=Poppins:wght@600&family=Roboto&display=swap');
+
+// Specifies black coloring scheme
+body {
+    font-family: 'Poppins', 'Roboto', sans-serif;
+    background-color: black;
+    color: white;
+}
+
+// Horizontally centers content
+#title, #locationButton, #coordinates, #elevation {
+    text-align: center;
+    position: absolute;
+    left: 50%;
+    -moz-transform: translateX(-50%) translateY(-50%);
+    -webkit-transform: translateX(-50%) translateY(-50%);
+    transform: translateX(-50%) translateY(-50%);
+}
+
+// Vertically aligns title
+#title {
+    display: none;
+    top: 40%;
+}
+
+// Sets white coloring for location button and vertically aligns it
+#locationButton {
+    @include button.ink-color(white);
+    display: none;
+    top: 51%;
+}
+
+// Sets white ripple color for location button
+#buttonRipple {
+    @include ripple.states-base-color(white);
+}
+
+// Vertically aligns coordinates
+#coordinates {
+    top: 50%;
+}
+
+// Vertically aligns elevation
+#elevation {
+    top: 58%;
+}
+
+// Removes blue URL color
+a {
+    color: inherit;
+}
+
+// Positions info icon on mobile devices
+@media (max-width: 560px) {
+    #infoIcon {
+        position: fixed;
+        bottom: 1%;
+        right: 2%;
+    }
+}
+
+// Positions info icon on desktop devices
+@media (min-width: 560px) {
+    #infoIcon {
+        position: fixed;
+        bottom: 1%;
+        right: 0.5%;
+    }
+}
+
+// Sets font and margins for about description
+#aboutDescription {
+    font-family: 'Roboto', sans-serif;
+    margin-top: 5%;
+    margin-left: 10%;
+    margin-right: 10%;
+}
+
+// Specifies font size for Material Icon
+.material-icons.md-36 {
+    font-size: 36px;
+}

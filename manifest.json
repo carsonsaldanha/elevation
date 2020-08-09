@@ -1,0 +1,31 @@
+{
+  "name": "Elevation",
+  "short_name": "Elevation",
+  "description": "A free and private elevation web app",
+  "icons": [
+    {
+      "src": "favicon-192.png",
+      "type": "image/png",
+      "sizes": "192x192"
+    },
+    {
+      "src": "favicon-512.png",
+      "type": "image/png",
+      "sizes": "512x512"
+    },
+    {
+      "src": "favicon-768.png",
+      "type": "image/png",
+      "sizes": "768x768"
+    },
+    {
+      "src": "maskable-icon.png",
+      "type": "image/png",
+      "sizes": "1024x1024",
+      "purpose": "maskable"
+    }
+  ],
+  "start_url": "index.html",
+  "display": "standalone",
+  "theme_color": "#000000"
+}

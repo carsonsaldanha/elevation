@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<html lang="en-US">
+    <head>
+        <link rel="icon" type="image/png" href="favicon-768.png"/>
+        <link rel="manifest" href="manifest.json">
+        <link rel="stylesheet" href="bundle.css">
+        <link rel="stylesheet" href="https://fonts.googleapis.com/icon?family=Material+Icons">
+        <!-- Load jQuery from Google Hosted Libraries -->
+        <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+        <meta charset="UTF-8">
+        <!-- Control layout on mobile browsers -->
+        <meta name="viewport" content="width=device-width, initial-scale=1">
+        <title>Elevation</title>
+    </head>
+    <body>
+        <h1 id="title">Elevation</h1>
+        <button class="mdc-button" id="locationButton">
+            <div class="mdc-button__ripple" id="buttonRipple"></div>
+            <i class="material-icons mdc-button__icon" aria-hidden="true"
+                >location_on</i
+            >
+            <span class="mdc-button__label">Allow location</span>
+        </button>
+        <p id="coordinates"></p>
+        <p id="elevation"></p>
+        <a href="/about.html">
+            <i class="material-icons md-18" id="infoIcon">info</i>
+        </a>
+        <script src="elevation.js"></script>
+        <script src="bundle.js" async></script>
+        <!-- Register PWA service worker -->
+        <script type="module">
+            import 'https://cdn.jsdelivr.net/npm/@pwabuilder/pwaupdate';
+            const el = document.createElement('pwa-update');
+            document.body.appendChild(el);
+        </script>
+    </body>
+</html>
