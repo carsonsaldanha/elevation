@@ -61,13 +61,13 @@ function getElevation(latitude, longitude) {
         let elevation = data.USGS_Elevation_Point_Query_Service.Elevation_Query.Elevation;
         // Tries the second API because USGS doesn't have elevation data for that location
         if (elevation == "-1000000") {
-            // Generates a HTTP GET request string for Open Topo Data's API
-            getRequest = "https://api.opentopodata.org/v1/srtm90m?locations=" + latitude + "," + longitude;
+            // Generates a HTTP GET request string Elevation-API
+            getRequest = "https://elevation-api.io/api/elevation?points=(" + latitude + "," + longitude + ")&key=Cv5dd2ItLb3d8YJbzL-b0AtWD-t03x";
             $.getJSON(getRequest, function(data) {
                 // Gets the elevation from the JSON
-                elevation = data.results[0].elevation;
+                elevation = data.elevations[0].elevation;
                 // Indicates if no elevation data is available for this location
-                if (elevation == "null" || elevation == "NaN") {
+                if (elevation == "-9999") {
                     elevationElem.innerHTML = "Unfortunately, elevation data is not available for your location.";
                 } else {
                     elevationElem.innerHTML = elevation + " m";
